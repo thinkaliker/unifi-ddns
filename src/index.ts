@@ -19,6 +19,7 @@ function constructClientOptions(request: Request): ClientOptions {
 	}
 
 	const [, data] = authorization.split(' ');
+	console.log(data)
 	const decoded = atob(data);
 	const index = decoded.indexOf(':');
 
