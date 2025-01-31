@@ -19,7 +19,6 @@ function constructClientOptions(request: Request): ClientOptions {
 	}
 
 	const [, data] = authorization.split(' ');
-	console.log(request.headers)
 	const decoded = atob(data);
 	const index = decoded.indexOf(':');
 
@@ -111,6 +110,7 @@ export default {
 		console.log('Requester IP: ' + request.headers.get('CF-Connecting-IP'));
 		console.log(request.method + ': ' + request.url);
 		console.log('Body: ' + (await request.text()));
+		console.log(JSON.stringify(request.headers));
 
 		try {
 			// Construct client options and DNS record
